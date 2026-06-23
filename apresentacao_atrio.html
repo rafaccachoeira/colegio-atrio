@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colégio Átrio × GRIT — Estratégia de Tráfego Pago 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:#0D0D0D;overflow-x:hidden}
+body{font-family:'Poppins',system-ui,sans-serif;background:#0D0D0D;color:#fff;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+:root{
+  --dark:#0D0D0D;--dark2:#141414;--card-dark:#1A1A1A;--card-dark2:#1E1E1E;
+  --light:#FFFFFF;--light2:#FAFAFA;--gold:#A67C45;--gold-l:#C49A55;
+  --gray:#888888;--gray-l:#CCCCCC;--gray-d:#1A1A1A;--green:#1A6E45;--red:#CC4444;
+  --r4:4px;--r8:8px;--r12:12px;--r16:16px;--r20:20px;
+  --sh-sm:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.06);
+  --sh-md:0 2px 8px rgba(0,0,0,.1),0 8px 28px rgba(0,0,0,.08);
+  --sh-dk:0 2px 8px rgba(0,0,0,.35),0 10px 32px rgba(0,0,0,.22);
+}
+
+/* Layout */
+.wrap{max-width:1280px;margin:0 auto;padding:0 80px;width:100%}
+section{position:relative;overflow:hidden}
+.sec-dark{background:var(--dark2);color:#fff}
+.sec-darker{background:var(--dark);color:#fff}
+.sec-light{background:var(--light);color:var(--gray-d)}
+.sec-light2{background:var(--light2);color:var(--gray-d)}
+.pad{padding:110px 0}
+
+/* Typography */
+.t-gold{color:var(--gold)}.t-gold-l{color:var(--gold-l)}.t-white{color:#fff}
+.t-gray{color:var(--gray)}.t-gray-l{color:var(--gray-l)}.t-dark{color:var(--gray-d)}
+.f6{font-size:48px;font-weight:700;line-height:1.1;letter-spacing:-.5px}
+.f5{font-size:36px;font-weight:700;line-height:1.2}
+.f4{font-size:24px;font-weight:600;line-height:1.3}
+.f3{font-size:17px;font-weight:400;line-height:1.7}
+.f2{font-size:15px;font-weight:400;line-height:1.65}
+.f1{font-size:13px;font-weight:400;line-height:1.5}
+.bold{font-weight:700}.semi{font-weight:600}.med{font-weight:500}
+.sec-lbl{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--gray);margin-bottom:10px;display:block}
+
+/* Bar accent */
+.bar-accent{position:relative;padding-left:18px}
+.bar-accent::before{content:'';position:absolute;left:0;top:6px;bottom:6px;width:3px;background:var(--gold);border-radius:2px}
+
+/* Cards */
+.card-d{background:var(--card-dark);border-radius:var(--r12);padding:28px;box-shadow:var(--sh-dk)}
+.card-l{background:var(--light);border-radius:var(--r12);padding:28px;box-shadow:var(--sh-sm)}
+
+/* Stat cards */
+.stat-card{background:var(--card-dark);border-radius:var(--r12);padding:32px 28px;text-align:center;flex:1;box-shadow:var(--sh-dk);border-top:2px solid var(--gold);transition:transform .2s,box-shadow .2s}
+.stat-card:hover{transform:translateY(-4px);box-shadow:0 8px 40px rgba(166,124,69,.15)}
+.stat-num{font-size:44px;font-weight:800;color:var(--gold);line-height:1.1;margin-bottom:8px;letter-spacing:-.5px}
+.stat-lbl{font-size:13px;color:var(--gray);font-weight:500}
+
+/* Stat cards light */
+.stat-card-l{background:var(--light);border-radius:var(--r12);padding:32px 28px;text-align:center;flex:1;box-shadow:var(--sh-sm);border-top:2px solid var(--gold);transition:transform .2s,box-shadow .2s}
+.stat-card-l:hover{transform:translateY(-4px);box-shadow:0 8px 40px rgba(166,124,69,.12)}
+.stat-num-l{font-size:44px;font-weight:800;color:var(--gold);line-height:1.1;margin-bottom:8px;letter-spacing:-.5px}
+.stat-lbl-l{font-size:13px;color:var(--gray);font-weight:500}
+
+/* Utilities */
+.flex{display:flex}.col{flex-direction:column}.wrap-f{flex-wrap:wrap}
+.items-c{align-items:center}.items-s{align-items:flex-start}
+.jc{justify-content:center}.jb{justify-content:space-between}
+.g8{gap:8px}.g12{gap:12px}.g16{gap:16px}.g20{gap:20px}.g24{gap:24px}
+.g32{gap:32px}.g40{gap:40px}.g48{gap:48px}.g56{gap:56px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.mb8{margin-bottom:8px}.mb12{margin-bottom:12px}.mb16{margin-bottom:16px}
+.mb20{margin-bottom:20px}.mb24{margin-bottom:24px}.mb32{margin-bottom:32px}
+.mb40{margin-bottom:40px}.mb48{margin-bottom:48px}
+.mt8{margin-top:8px}.mt16{margin-top:16px}.mt24{margin-top:24px}
+.mt32{margin-top:32px}.mt40{margin-top:40px}
+
+/* Animations */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.anim{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.anim.show{opacity:1;transform:none}
+.anim-d1{transition-delay:.1s}.anim-d2{transition-delay:.2s}.anim-d3{transition-delay:.3s}.anim-d4{transition-delay:.4s}
+
+/* Progress bar */
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:1000;width:0;transition:width .08s linear;box-shadow:0 0 10px rgba(166,124,69,.5)}
+
+/* ===================== SEÇÃO 0 — CAPA ===================== */
+#s00{width:100%;min-height:100vh;background:var(--dark);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+#s00::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(166,124,69,.06) 0%,transparent 70%)}
+.capa-inner{display:flex;flex-direction:column;align-items:center;text-align:center;width:90%;max-width:1000px;z-index:1}
+.capa-logos{display:flex;align-items:center;justify-content:center;gap:40px;margin-bottom:56px;animation:fadeUp .8s .1s both}
+.capa-logos-divider{width:1px;height:48px;background:rgba(166,124,69,.35)}
+.capa-atrio-logo{height:52px;object-fit:contain}
+.capa-grit-logo{height:36px;object-fit:contain}
+.capa-divider{width:64px;height:2px;background:var(--gold);opacity:.5;margin:0 auto 32px;animation:fadeUp .6s .3s both}
+.capa-title{font-size:56px;font-weight:800;color:var(--gold);line-height:1.08;letter-spacing:-1px;margin-bottom:20px;animation:fadeUp .8s .45s both}
+.capa-sub{font-size:22px;font-weight:400;color:rgba(255,255,255,.65);letter-spacing:.5px;animation:fadeUp .7s .6s both}
+.capa-tag{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--gray);letter-spacing:3px;text-transform:uppercase;animation:fadeUp .5s .75s both;white-space:nowrap}
+.capa-scroll{position:absolute;bottom:28px;right:64px;display:flex;flex-direction:column;align-items:center;gap:6px;animation:fadeUp .5s .9s both;opacity:.4}
+.capa-scroll-line{width:1px;height:40px;background:var(--gold)}
+.capa-scroll-txt{font-size:10px;letter-spacing:2px;color:var(--gray);text-transform:uppercase}
+
+/* ===================== SEÇÃO 1 — A META ===================== */
+#s01{background:var(--light2)}
+.meta-body{max-width:700px;margin-bottom:56px}
+.meta-body p{font-size:17px;color:#444;line-height:1.8;margin-bottom:16px}
+.meta-body p strong{color:var(--gray-d);font-weight:700}
+.meta-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+
+/* ===================== SEÇÃO 2 — DISTRIBUIÇÃO DE VERBA ===================== */
+#s02{background:var(--dark)}
+.verba-intro{max-width:680px;margin-bottom:56px;font-size:16px;color:var(--gray-l);line-height:1.8}
+.verba-table{width:100%}
+.verba-row{display:grid;grid-template-columns:110px 100px 1fr 160px;align-items:center;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.verba-row:last-child{border-bottom:none;padding-top:24px;margin-top:8px;border-top:2px solid rgba(166,124,69,.3)}
+.verba-mes{font-size:14px;font-weight:600;color:#fff}
+.verba-val{font-size:15px;font-weight:700;color:var(--gold);text-align:right}
+.verba-bar-track{height:8px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.verba-bar-fill{height:100%;background:var(--gold);border-radius:4px;transition:width 1s ease}
+.verba-bar-fill.peak{background:linear-gradient(90deg,var(--gold),var(--gold-l))}
+.verba-desc{font-size:13px;color:var(--gray)}
+.verba-row.peak-row .verba-mes{color:var(--gold-l)}
+.verba-row.peak-row .verba-desc{color:var(--gray-l)}
+.verba-row.total-row .verba-mes{font-size:15px;font-weight:700;color:#fff}
+.verba-row.total-row .verba-val{font-size:20px;color:var(--gold-l)}
+
+/* Peak badge */
+.peak-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(166,124,69,.12);border:1px solid rgba(166,124,69,.4);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;color:var(--gold);margin-left:10px;vertical-align:middle;letter-spacing:.5px}
+
+/* ===================== SEÇÃO 3 — OS CANAIS ===================== */
+#s03{background:var(--light)}
+.canais-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.canal-card{background:var(--light2);border-radius:var(--r16);padding:32px;border:1px solid rgba(0,0,0,.06);display:flex;gap:20px;align-items:flex-start;transition:box-shadow .2s,transform .2s,border-color .2s;cursor:default}
+.canal-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px);border-color:rgba(166,124,69,.3)}
+.canal-icon{width:48px;height:48px;border-radius:var(--r12);background:rgba(166,124,69,.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold)}
+.canal-name{font-size:17px;font-weight:700;color:var(--gray-d);margin-bottom:6px}
+.canal-role{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);margin-bottom:8px}
+.canal-desc{font-size:14px;color:var(--gray);line-height:1.65}
+
+/* ===================== SEÇÃO 4 — PARA QUEM FALAMOS ===================== */
+#s04{background:var(--dark2)}
+.publico-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px}
+.publico-card{background:var(--card-dark);border-radius:var(--r16);padding:40px;border-top:3px solid var(--gold);box-shadow:var(--sh-dk)}
+.publico-age{font-size:13px;color:var(--gray);font-weight:500;margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.publico-age::before{content:'';width:24px;height:1px;background:var(--gold);display:inline-block}
+.publico-section{margin-bottom:24px}
+.publico-section-lbl{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gray);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.publico-dot-gold{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.publico-section-lbl.red{color:#CC6644}
+.publico-dot-red{width:5px;height:5px;border-radius:50%;background:#CC6644;flex-shrink:0}
+.publico-text{font-size:15px;color:var(--gray-l);line-height:1.7}
+.publico-onde{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.onde-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:5px 12px;font-size:12px;color:var(--gray-l)}
+
+/* ===================== SEÇÃO 5 — SEGMENTAÇÃO ===================== */
+#s05{background:var(--light2)}
+.fase-list{display:flex;flex-direction:column;gap:0;margin-top:56px}
+.fase-item{background:var(--light);border-radius:0;padding:0;border-bottom:1px solid rgba(0,0,0,.06);overflow:hidden;transition:box-shadow .2s}
+.fase-item:first-child{border-radius:var(--r12) var(--r12) 0 0}
+.fase-item:last-child{border-radius:0 0 var(--r12) var(--r12);border-bottom:none}
+.fase-header{display:flex;align-items:center;gap:20px;padding:28px 32px;cursor:pointer;user-select:none;transition:background .15s}
+.fase-header:hover{background:rgba(166,124,69,.03)}
+.fase-num{width:32px;height:32px;border-radius:50%;background:rgba(166,124,69,.1);border:1px solid rgba(166,124,69,.3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--gold);flex-shrink:0}
+.fase-month{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold);min-width:80px}
+.fase-title{font-size:17px;font-weight:600;color:var(--gray-d);flex:1}
+.fase-verba{font-size:14px;font-weight:700;color:var(--gold);margin-left:auto;padding:4px 14px;background:rgba(166,124,69,.08);border-radius:20px}
+.fase-arrow{width:20px;height:20px;color:var(--gray);transition:transform .3s;flex-shrink:0}
+.fase-item.open .fase-arrow{transform:rotate(180deg)}
+.fase-body{padding:0 32px 0 84px;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.fase-item.open .fase-body{max-height:500px;padding:0 32px 28px 84px}
+.fase-body p{font-size:15px;color:#555;line-height:1.75;margin-bottom:12px}
+.fase-body p:last-child{margin-bottom:0}
+.fase-canais{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.fase-canal-tag{display:inline-flex;align-items:center;gap:5px;background:rgba(166,124,69,.07);border:1px solid rgba(166,124,69,.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;color:var(--gold)}
+
+/* ===================== SEÇÃO 6 — CRIATIVOS ===================== */
+#s06{background:var(--dark)}
+.criativos-period{margin-bottom:56px}
+.criativos-period:last-child{margin-bottom:0}
+.period-header{display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.period-month-badge{display:inline-flex;align-items:center;background:rgba(166,124,69,.1);border:1px solid rgba(166,124,69,.3);border-radius:var(--r8);padding:6px 16px;font-size:12px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1px}
+.period-divider{flex:1;height:1px;background:rgba(255,255,255,.06)}
+.criativos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.criativo-card{background:var(--card-dark2);border-radius:var(--r12);padding:24px;border:1px solid rgba(255,255,255,.04);transition:border-color .2s,transform .2s}
+.criativo-card:hover{border-color:rgba(166,124,69,.3);transform:translateY(-2px)}
+.criativo-type{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.criativo-type-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.criativo-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:8px;line-height:1.4}
+.criativo-desc{font-size:13px;color:var(--gray);line-height:1.6}
+.criativo-duration{display:inline-flex;align-items:center;gap:4px;background:rgba(255,255,255,.05);border-radius:20px;padding:3px 10px;font-size:11px;color:var(--gray);margin-top:10px}
+.quote-card{background:rgba(166,124,69,.06);border:1px solid rgba(166,124,69,.2);border-left:3px solid var(--gold);border-radius:var(--r8);padding:16px 20px;margin-top:6px;font-size:14px;font-style:italic;color:var(--gold-l);line-height:1.6}
+
+/* ===================== SEÇÃO 7 — GRIT CRM ===================== */
+#s07{background:var(--dark2)}
+.crm-intro{max-width:660px;margin-bottom:64px;font-size:16px;color:var(--gray-l);line-height:1.8}
+.crm-pipeline{display:flex;align-items:center;gap:0;margin-bottom:64px;overflow-x:auto;padding-bottom:8px}
+.crm-stage{background:var(--card-dark);border-radius:var(--r12);padding:20px 22px;text-align:center;min-width:160px;border-top:2px solid var(--gold);box-shadow:var(--sh-dk);flex-shrink:0;transition:transform .2s}
+.crm-stage:hover{transform:translateY(-3px)}
+.crm-stage-num{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+.crm-stage-name{font-size:14px;font-weight:600;color:#fff;line-height:1.35}
+.crm-arrow{flex-shrink:0;color:var(--gold);opacity:.5;margin:0 4px}
+.crm-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.crm-block{background:var(--card-dark);border-radius:var(--r12);padding:32px}
+.crm-block-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.crm-block-icon{width:20px;height:20px;color:var(--gold);flex-shrink:0}
+.crm-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.crm-list li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--gray-l);line-height:1.6}
+.crm-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
+.crm-badge{display:inline-flex;align-items:center;gap:12px;background:rgba(166,124,69,.07);border:1px solid rgba(166,124,69,.25);border-radius:var(--r12);padding:14px 20px;margin-bottom:40px}
+.crm-badge-img{height:32px;object-fit:contain}
+.crm-badge-text{font-size:13px;color:var(--gray-l);font-weight:500}
+
+/* ===================== SEÇÃO 8 — MÉTRICAS ===================== */
+#s08{background:var(--light)}
+.metrics-intro{max-width:600px;margin-bottom:56px;font-size:16px;color:#555;line-height:1.8}
+.metrics-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+.metric-card{background:var(--light2);border-radius:var(--r16);padding:40px 32px;border-top:3px solid var(--gold);box-shadow:var(--sh-sm);transition:transform .2s,box-shadow .2s}
+.metric-card:hover{transform:translateY(-4px);box-shadow:0 12px 48px rgba(166,124,69,.12)}
+.metric-num{font-size:48px;font-weight:800;color:var(--gold);line-height:1;margin-bottom:8px;letter-spacing:-.5px}
+.metric-label{font-size:15px;font-weight:700;color:var(--gray-d);margin-bottom:16px}
+.metric-desc{font-size:14px;color:var(--gray);line-height:1.65}
+.metric-meta{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--green);margin-top:16px;display:flex;align-items:center;gap:6px}
+.metric-meta::before{content:'';width:20px;height:2px;background:var(--green)}
+.metrics-closing{background:var(--dark);border-radius:var(--r16);padding:40px 48px;text-align:center;max-width:800px;margin:0 auto}
+.metrics-closing p{font-size:17px;color:rgba(255,255,255,.75);line-height:1.75}
+.metrics-closing strong{color:var(--gold)}
+
+/* ===================== FOOTER ===================== */
+#footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.05);padding:64px 0 48px}
+.footer-logos{display:flex;align-items:center;justify-content:center;gap:32px;margin-bottom:32px}
+.footer-divider{width:1px;height:40px;background:rgba(166,124,69,.25)}
+.footer-atrio{height:40px;object-fit:contain}
+.footer-grit{height:28px;object-fit:contain;opacity:.7}
+.footer-title{font-size:18px;font-weight:600;color:#fff;text-align:center;margin-bottom:8px}
+.footer-sub{font-size:13px;color:var(--gray);text-align:center;letter-spacing:.5px}
+.footer-line{width:64px;height:1px;background:rgba(166,124,69,.35);margin:24px auto}
+.footer-byline{font-size:12px;color:rgba(255,255,255,.2);text-align:center;letter-spacing:1px}
+
+/* ===================== SECTION HEADER ===================== */
+.sec-header{margin-bottom:56px}
+.sec-header .sec-lbl{margin-bottom:12px}
+.sec-title{font-size:40px;font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:16px}
+.sec-title-dark{color:#fff}
+.sec-title-light{color:var(--gray-d)}
+.sec-body{font-size:16px;color:var(--gray);line-height:1.75;max-width:600px}
+.sec-body-dark{color:var(--gray-l)}
+
+/* Responsive */
+@media(max-width:900px){
+  .wrap{padding:0 28px}
+  .pad{padding:72px 0}
+  .capa-title{font-size:36px}
+  .meta-stats,.grid4{grid-template-columns:1fr 1fr}
+  .canais-grid,.publico-grid,.crm-grid{grid-template-columns:1fr}
+  .criativos-grid,.metrics-grid{grid-template-columns:1fr}
+  .sec-title{font-size:28px}
+  .verba-row{grid-template-columns:90px 90px 1fr;gap:12px}
+  .verba-desc{display:none}
+}
+@media(max-width:600px){
+  .capa-title{font-size:28px}
+  .meta-stats,.grid4{grid-template-columns:1fr}
+  .fase-header{padding:20px 18px}
+  .fase-body.open{padding:0 18px 20px 18px}
+}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress"></div>
+
+<!-- ========================= CAPA ========================= -->
+<section id="s00">
+  <div class="capa-inner">
+    <div class="capa-logos">
+      <img src="Logo Atrio 1.jpeg" alt="Colégio Átrio" class="capa-atrio-logo">
+      <div class="capa-logos-divider"></div>
+      <img src="LOGO/Logo branca.png" alt="GRIT" class="capa-grit-logo">
+    </div>
+    <div class="capa-divider"></div>
+    <h1 class="capa-title">Estratégia de Tráfego Pago<br>Captação 2027</h1>
+    <p class="capa-sub">Julho a Dezembro de 2026</p>
+  </div>
+  <div class="capa-tag">Colégio Átrio × GRIT</div>
+</section>
+
+<!-- ========================= SEÇÃO 1 — A META ========================= -->
+<section id="s01" class="pad">
+  <div class="wrap">
+    <div class="sec-header anim">
+      <span class="sec-lbl">01 — A Meta</span>
+      <h2 class="sec-title sec-title-light bar-accent">200 novas matrículas.</h2>
+    </div>
+    <div class="meta-body anim anim-d1">
+      <p>Esse é o número que orienta toda a estratégia. Para chegar lá, com base no histórico da escola, precisamos gerar <strong>2.000 cadastros qualificados</strong> ao longo de 6 meses — uma taxa de conversão de <strong>10%</strong> de cadastro para matrícula.</p>
+      <p>O investimento total em mídia digital é de <strong>R$72.000</strong>, distribuídos de julho a dezembro com concentração nos meses de maior intenção de decisão das famílias.</p>
+    </div>
+    <div class="meta-stats">
+      <div class="stat-card-l anim anim-d1">
+        <div class="stat-num-l">200</div>
+        <div class="stat-lbl-l">Novas matrículas</div>
+      </div>
+      <div class="stat-card-l anim anim-d2">
+        <div class="stat-num-l">2.000</div>
+        <div class="stat-lbl-l">Cadastros qualificados</div>
+      </div>
+      <div class="stat-card-l anim anim-d3">
+        <div class="stat-num-l">R$72k</div>
+        <div class="stat-lbl-l">Investimento total em mídia</div>
+      </div>
+      <div class="stat-card-l anim anim-d4">
+        <div class="stat-num-l">R$360</div>
+        <div class="stat-lbl-l">Custo estimado por matrícula</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SEÇÃO 2 — DISTRIBUIÇÃO DE VERBA ========================= -->
+<section id="s02" class="pad sec-darker">
+  <div class="wrap">
+    <div class="sec-header anim">
+      <span class="sec-lbl" style="color:var(--gray)">02 — Distribuição de Verba</span>
+      <h2 class="sec-title sec-title-dark bar-accent">Onde vai o investimento.</h2>
+    </div>
+    <p class="verba-intro anim anim-d1">A distribuição não é linear. Ela segue o comportamento das famílias: as que decidem bem são as que decidem cedo, e o pico de decisão acontece entre agosto e outubro.</p>
+
+    <div class="verba-table anim anim-d2">
+      <div class="verba-row" style="padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08)">
+        <span class="sec-lbl" style="margin:0">Mês</span>
+        <span class="sec-lbl" style="margin:0;text-align:right">Verba</span>
+        <span class="sec-lbl" style="margin:0">Distribuição</span>
+        <span class="sec-lbl" style="margin:0">Foco</span>
+      </div>
+
+      <div class="verba-row">
+        <span class="verba-mes">Julho</span>
+        <span class="verba-val">R$7.000</span>
+        <div class="verba-bar-track"><div class="verba-bar-fill" data-pct="9.7"></div></div>
+        <span class="verba-desc">Posicionamento e estrutura</span>
+      </div>
+      <div class="verba-row">
+        <span class="verba-mes">Agosto</span>
+        <span class="verba-val">R$12.000</span>
+        <div class="verba-bar-track"><div class="verba-bar-fill" data-pct="16.7"></div></div>
+        <span class="verba-desc">Início da captação</span>
+      </div>
+      <div class="verba-row peak-row">
+        <span class="verba-mes">Setembro <span class="peak-badge">Pico</span></span>
+        <span class="verba-val">R$20.000</span>
+        <div class="verba-bar-track"><div class="verba-bar-fill peak" data-pct="27.8"></div></div>
+        <span class="verba-desc">Pico de decisão</span>
+      </div>
+      <div class="verba-row">
+        <span class="verba-mes">Outubro</span>
+        <span class="verba-val">R$18.000</span>
+        <div class="verba-bar-track"><div class="verba-bar-fill" data-pct="25"></div></div>
+        <span class="verba-desc">Conversão e fechamento</span>
+      </div>
+      <div class="verba-row">
+        <span class="verba-mes">Novembro</span>
+        <span class="verba-val">R$10.000</span>
+        <div class="verba-bar-track"><div class="verba-bar-fill" data-pct="13.9"></div></div>
+        <span class="verba-desc">Últimas matrículas do ciclo bom</span>
+      </div>
+      <div class="verba-row">
+        <span class="verba-mes">Dezembro</span>
+        <span class="verba-val">R$5.000</span>
+        <div class="verba-bar-track"><div class="verba-bar-fill" data-pct="6.9"></div></div>
+        <span class="verba-desc">Encerramento</span>
+      </div>
+      <div class="verba-row total-row">
+        <span class="verba-mes">Total</span>
+        <span class="verba-val">R$72.000</span>
+        <div></div>
+        <span class="verba-desc" style="color:var(--gray-l);font-weight:600">Julho → Dezembro 2026</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SEÇÃO 3 — OS CANAIS ========================= -->
+<section id="s03" class="pad sec-light">
+  <div class="wrap">
+    <div class="sec-header anim">
+      <span class="sec-lbl">03 — Os Canais</span>
+      <h2 class="sec-title sec-title-light bar-accent">Cada canal tem uma função.</h2>
+      <p class="sec-body">Não usamos todos ao mesmo tempo — cada canal entra no momento certo da jornada da família.</p>
+    </div>
+
+    <div class="canais-grid">
+      <!-- Meta Ads -->
+      <div class="canal-card anim anim-d1">
+        <div class="canal-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="canal-role">Captação + Marca</div>
+          <div class="canal-name">Meta Ads — Instagram e Facebook</div>
+          <p class="canal-desc">Onde os pais estão. Principal canal de captação de cadastros e de construção de marca ao longo de toda a campanha. Permite alcançar as famílias pelo perfil, comportamento e localização, além de impactar quem já demonstrou interesse mas ainda não entrou em contato.</p>
+        </div>
+      </div>
+
+      <!-- Google Ads -->
+      <div class="canal-card anim anim-d2">
+        <div class="canal-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+        </div>
+        <div>
+          <div class="canal-role">Alta Intenção</div>
+          <div class="canal-name">Google Ads</div>
+          <p class="canal-desc">Captura quem já está procurando. Quando uma família digita "colégio ensino médio Goiânia" ou "matrícula 2027", o Átrio aparece na frente. É o canal de maior intenção de decisão.</p>
+        </div>
+      </div>
+
+      <!-- TikTok -->
+      <div class="canal-card anim anim-d3">
+        <div class="canal-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="canal-role">Estudantes</div>
+          <div class="canal-name">TikTok</div>
+          <p class="canal-desc">Onde os estudantes estão. A decisão de escola no ensino médio passa pelo filho — e o filho está no TikTok. O papel desse canal é fazer com que o estudante chegue em casa já com vontade de conhecer o Átrio.</p>
+        </div>
+      </div>
+
+      <!-- YouTube -->
+      <div class="canal-card anim anim-d4">
+        <div class="canal-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+            <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+          </svg>
+        </div>
+        <div>
+          <div class="canal-role">Reforço de Marca</div>
+          <div class="canal-name">YouTube</div>
+          <p class="canal-desc">Reforço de marca e presença em canais de estudo. Alcança tanto os estudantes quanto os pais no momento em que estão consumindo conteúdo relacionado a educação e vestibular.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SEÇÃO 4 — PARA QUEM FALAMOS ========================= -->
+<section id="s04" class="pad">
+  <div class="wrap">
+    <div class="sec-header anim">
+      <span class="sec-lbl" style="color:var(--gray)">04 — Para Quem Falamos</span>
+      <h2 class="sec-title sec-title-dark bar-accent">A matrícula é uma decisão a dois.</h2>
+      <p class="sec-body sec-body-dark">A comunicação precisa funcionar para o responsável que paga e para o estudante que vai viver a escola.</p>
+    </div>
+
+    <div class="publico-grid">
+      <!-- O Responsável -->
+      <div class="publico-card anim anim-d1">
+        <span class="sec-lbl" style="color:var(--gold);font-size:12px;letter-spacing:2px;display:block;margin-bottom:6px">O Responsável</span>
+        <h3 style="font-size:22px;font-weight:700;color:#fff;margin-bottom:4px">Pais e mães</h3>
+        <p class="publico-age">38 a 52 anos — Goiânia</p>
+
+        <div class="publico-section">
+          <div class="publico-section-lbl"><span class="publico-dot-gold"></span>O que move essa decisão</div>
+          <p class="publico-text">Segurança de estar fazendo a escolha certa, querer que o filho tenha um caminho claro e sentir que o investimento vai gerar retorno real.</p>
+        </div>
+
+        <div class="publico-section">
+          <div class="publico-section-lbl red"><span class="publico-dot-red"></span>O que pesa contra</div>
+          <p class="publico-text">O medo de escolher errado num momento que não tem volta. Três anos de ensino médio são três anos — e quem escolheu mal sabe o custo de trocar no meio do caminho.</p>
+        </div>
+
+        <div class="publico-section">
+          <div class="publico-section-lbl"><span class="publico-dot-gold"></span>O que esse pai quer ver</div>
+          <p class="publico-text">Que alguém vai olhar para o filho dele de verdade. Não uma fotografia com o nome da universidade. Um acompanhamento real.</p>
+        </div>
+
+        <div>
+          <div class="publico-section-lbl" style="margin-bottom:10px"><span class="publico-dot-gold"></span>Onde está</div>
+          <div class="publico-onde">
+            <span class="onde-tag">Instagram</span>
+            <span class="onde-tag">Facebook</span>
+            <span class="onde-tag">Country Club</span>
+            <span class="onde-tag">Flex</span>
+            <span class="onde-tag">Restaurantes de família</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- O Estudante -->
+      <div class="publico-card anim anim-d2">
+        <span class="sec-lbl" style="color:var(--gold);font-size:12px;letter-spacing:2px;display:block;margin-bottom:6px">O Estudante</span>
+        <h3 style="font-size:22px;font-weight:700;color:#fff;margin-bottom:4px">Adolescentes</h3>
+        <p class="publico-age">14 a 17 anos</p>
+
+        <div class="publico-section">
+          <div class="publico-section-lbl"><span class="publico-dot-gold"></span>O que move essa decisão</div>
+          <p class="publico-text">Pertencer a um grupo de pessoas que ele respeita, ser tratado como alguém capaz de decidir e sentir que a escola está do lado dele — não em cima dele.</p>
+        </div>
+
+        <div class="publico-section">
+          <div class="publico-section-lbl red"><span class="publico-dot-red"></span>O que pesa contra</div>
+          <p class="publico-text">Ser mais um número. Escola que controla mas não orienta. Três anos desmotivado.</p>
+        </div>
+
+        <div class="publico-section">
+          <div class="publico-section-lbl"><span class="publico-dot-gold"></span>O que esse estudante quer ver</div>
+          <p class="publico-text">Um lugar que o trate como adulto e mostre exatamente onde ele precisa chegar.</p>
+        </div>
+
+        <div>
+          <div class="publico-section-lbl" style="margin-bottom:10px"><span class="publico-dot-gold"></span>Onde está</div>
+          <div class="publico-onde">
+            <span class="onde-tag">TikTok</span>
+            <span class="onde-tag">YouTube</span>
+            <span class="onde-tag">Instagram</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SEÇÃO 5 — SEGMENTAÇÃO POR FASE ========================= -->
+<section id="s05" class="pad sec-light2">
+  <div class="wrap">
+    <div class="sec-header anim">
+      <span class="sec-lbl">05 — Segmentação por Fase</span>
+      <h2 class="sec-title sec-title-light bar-accent">O que roda em cada mês.</h2>
+      <p class="sec-body">Cada fase tem uma missão diferente — e os canais, criativos e públicos mudam conforme o momento das famílias.</p>
+    </div>
+
+    <div class="fase-list anim anim-d1">
+
+      <div class="fase-item open">
+        <div class="fase-header" onclick="toggleFase(this)">
+          <div class="fase-num">1</div>
+          <span class="fase-month">Julho</span>
+          <span class="fase-title">Construção de audiência</span>
+          <span class="fase-verba">R$7.000</span>
+          <svg class="fase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="fase-body">
+          <p>O objetivo de julho <strong>não é gerar cadastro</strong> — é construir a base de pessoas que vão receber a campanha em agosto e setembro.</p>
+          <p>No Meta, vamos impactar pais de 38 a 52 anos em Goiânia com interesses em educação, vestibular e ENEM. Quem assistir os vídeos, visitar o perfil ou interagir com os conteúdos entra automaticamente no público de remarketing.</p>
+          <p>No Google, iniciamos as campanhas de busca para capturar quem já está pesquisando escola de ensino médio em Goiânia.</p>
+          <div class="fase-canais">
+            <span class="fase-canal-tag">Meta Ads</span>
+            <span class="fase-canal-tag">Google Search</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fase-item">
+        <div class="fase-header" onclick="toggleFase(this)">
+          <div class="fase-num">2</div>
+          <span class="fase-month">Agosto</span>
+          <span class="fase-title">Captação começa</span>
+          <span class="fase-verba">R$12.000</span>
+          <svg class="fase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="fase-body">
+          <p>Três frentes rodando ao mesmo tempo no Meta: famílias novas que ainda não conhecem o Átrio, direto para a landing page; quem assistiu os vídeos de julho com um criativo diferente — mais focado no método; Lookalike das famílias que já são clientes do Átrio — o público mais qualificado que conseguimos gerar.</p>
+          <p>TikTok entra em agosto. Ainda não com objetivo de cadastro — só para o estudante começar a conhecer a escola antes do pico de setembro.</p>
+          <div class="fase-canais">
+            <span class="fase-canal-tag">Meta Ads</span>
+            <span class="fase-canal-tag">Google Search</span>
+            <span class="fase-canal-tag">TikTok</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fase-item">
+        <div class="fase-header" onclick="toggleFase(this)">
+          <div class="fase-num">3</div>
+          <span class="fase-month" style="color:var(--gold-l)">Setembro</span>
+          <span class="fase-title">Pico — máxima pressão</span>
+          <span class="fase-verba" style="background:rgba(166,124,69,.18);border:1px solid rgba(166,124,69,.5);color:var(--gold-l)">R$20.000</span>
+          <svg class="fase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="fase-body">
+          <p>Quatro frentes no Meta: captação de famílias novas com os resultados do Pódio Átrio de agosto como criativo; reimpacto de quem visitou a landing page em julho e agosto mas não cadastrou; Lookalike expandido — testamos 1% e 3% em paralelo; captação focada no estudante com criativos e linguagem própria.</p>
+          <p>No Google, entra a campanha de Display: quem visitou a landing page começa a ver o Átrio nos sites que acessa. Reforço de marca fora das redes sociais.</p>
+          <div class="fase-canais">
+            <span class="fase-canal-tag">Meta Ads</span>
+            <span class="fase-canal-tag">Google Search</span>
+            <span class="fase-canal-tag">Google Display</span>
+            <span class="fase-canal-tag">TikTok</span>
+            <span class="fase-canal-tag">YouTube</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fase-item">
+        <div class="fase-header" onclick="toggleFase(this)">
+          <div class="fase-num">4</div>
+          <span class="fase-month">Outubro</span>
+          <span class="fase-title">Conversão e fechamento</span>
+          <span class="fase-verba">R$18.000</span>
+          <svg class="fase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="fase-body">
+          <p>O foco muda. A prioridade é converter os cadastros que já estão na base e ainda não agendaram visita. Reimpacto pesado de quem cadastrou mas não avançou — criativos de visita presencial, direcionamento direto, vagas disponíveis.</p>
+          <p>Reimpacto de 60 dias: muita gente visitou a landing page em agosto e setembro e ainda não decidiu. Esse grupo recebe um criativo diferente de tudo que já viu. O Pódio de outubro vira criativo de resultado acumulado do trimestre.</p>
+          <div class="fase-canais">
+            <span class="fase-canal-tag">Meta Ads</span>
+            <span class="fase-canal-tag">Google Search</span>
+            <span class="fase-canal-tag">Google Display</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fase-item">
+        <div class="fase-header" onclick="toggleFase(this)">
+          <div class="fase-num">5</div>
+          <span class="fase-month">Nov — Dez</span>
+          <span class="fase-title">Encerramento</span>
+          <span class="fase-verba">R$15.000</span>
+          <svg class="fase-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </div>
+        <div class="fase-body">
+          <p>Meta e Google apenas. TikTok e YouTube pausam. Foco total em converter os cadastros quentes que ainda estão na base.</p>
+          <p>As famílias que entram em contato nesse período ainda são boas — encerramos a captação ativa antes das matrículas de última hora de dezembro.</p>
+          <div class="fase-canais">
+            <span class="fase-canal-tag">Meta Ads</span>
+            <span class="fase-canal-tag">Google</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= SEÇÃO 6 — CRIATIVOS ========================= -->
+<section id="s06" class="pad sec-darker">
+  <div class="wrap">
+    <div class="sec-header anim">
+      <span class="sec-lbl" style="color:var(--gray)">06 — Criativos</span>
+      <h2 class="sec-title sec-title-dark bar-accent">O que vai ao ar em cada fase.</h2>
+      <p class="sec-body sec-body-dark">Cada criativo tem uma função específica dentro da jornada — do posicionamento inicial até o estímulo de visita presencial.</p>
+    </div>
+
+    <!-- Julho -->
+    <div class="criativos-period anim anim-d1">
+      <div class="period-header">
+        <span class="period-month-badge">Julho — Posicionamento</span>
+        <div class="period-divider"></div>
+      </div>
+      <div class="criativos-grid">
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Vídeo</div>
+          <div class="criativo-title">Vídeo do Adriano</div>
+          <p class="criativo-desc">Gravado na escola, sem roteiro fechado. Pegada natural. O tema central é a visão do Átrio sobre o aluno: cada estudante tem um caminho próprio, a escola está lá para mostrar esse caminho com clareza.</p>
+          <span class="criativo-duration">60–90 segundos</span>
+        </div>
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Depoimento</div>
+          <div class="criativo-title">Depoimento do Lucas</div>
+          <p class="criativo-desc">O momento onde ele conta como a decisão de levar a sério mudou o resultado — e que passou na UFG enquanto aguardava a aprovação nos Estados Unidos.</p>
+          <span class="criativo-duration">30–45 segundos</span>
+        </div>
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Estáticos</div>
+          <div class="criativo-title">Peças de conceito</div>
+          <p class="criativo-desc">Três peças com as frases da campanha. Visual limpo, uma frase por peça.</p>
+          <div class="quote-card">"A aprovação começa na decisão."</div>
+          <div class="quote-card">"Não é sorte. É escolha, foco e ação."</div>
+          <div class="quote-card">"Decida medicina. Decida Átrio."</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agosto -->
+    <div class="criativos-period anim anim-d2">
+      <div class="period-header">
+        <span class="period-month-badge">Agosto — Método</span>
+        <div class="period-divider"></div>
+      </div>
+      <div class="criativos-grid">
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Vídeo Nativo</div>
+          <div class="criativo-title">Vídeo TikTok</div>
+          <p class="criativo-desc">Gravado no celular, vertical, estudante real. Um dia na escola do ponto de vista do aluno. Com legenda, sem narração em off.</p>
+          <span class="criativo-duration">15–30 segundos</span>
+        </div>
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Carrossel</div>
+          <div class="criativo-title">Os 4 Pilares</div>
+          <p class="criativo-desc">Cada slide explica um pilar do método em linguagem de família. O que o pai precisa entender é o resultado de cada pilar, não o nome técnico.</p>
+        </div>
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Depoimento</div>
+          <div class="criativo-title">Depoimento de pai ou mãe</div>
+          <p class="criativo-desc">A família conta o que mudou depois que o filho entrou no Átrio. Ponto de entrada: a dúvida antes de matricular. Ponto de saída: o que percebeu de concreto.</p>
+          <span class="criativo-duration">30–45 segundos</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Setembro em diante -->
+    <div class="criativos-period anim anim-d3">
+      <div class="period-header">
+        <span class="period-month-badge">Setembro em diante — Pódio Átrio</span>
+        <div class="period-divider"></div>
+      </div>
+      <div class="criativos-grid">
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Vídeo</div>
+          <div class="criativo-title">Vídeo da cerimônia</div>
+          <p class="criativo-desc">Corte de 30 segundos do momento de reconhecimento mensal. Ambiente da escola, alunos sendo celebrados.</p>
+          <div class="quote-card">"Aqui cada conquista conta. Não só a aprovação final."</div>
+        </div>
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Card</div>
+          <div class="criativo-title">Card do Pódio</div>
+          <p class="criativo-desc">Destaque visual dos premiados do mês por categoria. Alta taxa de compartilhamento — pais e alunos marcam e repostam.</p>
+        </div>
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Conversão</div>
+          <div class="criativo-title">Criativo de visita</div>
+          <p class="criativo-desc">Para quem já conhece a escola mas ainda não agendou. Mais direto: foto da escola ou do Adriano, convite para visita presencial.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outubro -->
+    <div class="criativos-period anim anim-d4">
+      <div class="period-header">
+        <span class="period-month-badge">Outubro — Urgência</span>
+        <div class="period-divider"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Estático</div>
+          <div class="criativo-title">Criativo de vagas</div>
+          <p class="criativo-desc">Estático simples com número de vagas restantes. Comunicação direta, senso de urgência.</p>
+        </div>
+        <div class="criativo-card">
+          <div class="criativo-type"><span class="criativo-type-dot"></span>Resultado</div>
+          <div class="criativo-title">Resultado acumulado do Pódio</div>
+          <p class="criativo-desc">Criativo somando os reconhecimentos do trimestre. Mostra que o processo é consistente, não pontual.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= SEÇÃO 7 — GRIT CRM ========================= -->
+<section id="s07" class="pad sec-dark">
+  <div class="wrap">
+    <div class="sec-header anim">
+      <span class="sec-lbl" style="color:var(--gray)">07 — GRIT CRM</span>
+      <h2 class="sec-title sec-title-dark bar-accent">A jornada do cadastro até a matrícula.</h2>
+    </div>
+
+    <div class="crm-badge anim anim-d1">
+      <img src="LOGO/Simbolo dourado.png" alt="GRIT" class="crm-badge-img">
+      <span class="crm-badge-text">Um cadastro que não é atendido rápido esfria. A estrutura do GRIT CRM garante que nenhum cadastro fique sem resposta e que a equipe da escola tenha visibilidade de cada contato em tempo real.</span>
+    </div>
+
+    <!-- Pipeline -->
+    <div class="crm-pipeline anim anim-d2">
+      <div class="crm-stage">
+        <div class="crm-stage-num">01</div>
+        <div class="crm-stage-name">Cadastro<br>recebido</div>
+      </div>
+      <svg class="crm-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      <div class="crm-stage">
+        <div class="crm-stage-num">02</div>
+        <div class="crm-stage-name">Primeiro<br>contato</div>
+      </div>
+      <svg class="crm-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      <div class="crm-stage">
+        <div class="crm-stage-num">03</div>
+        <div class="crm-stage-name">Visita<br>agendada</div>
+      </div>
+      <svg class="crm-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      <div class="crm-stage">
+        <div class="crm-stage-num">04</div>
+        <div class="crm-stage-name">Visita<br>realizada</div>
+      </div>
+      <svg class="crm-arrow" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      <div class="crm-stage" style="border-color:var(--green);box-shadow:0 0 24px rgba(26,110,69,.2)">
+        <div class="crm-stage-num" style="color:var(--green)">05</div>
+        <div class="crm-stage-name">Matrícula</div>
+      </div>
+    </div>
+
+    <!-- CRM grid -->
+    <div class="crm-grid anim anim-d3">
+      <div class="crm-block">
+        <div class="crm-block-title">
+          <svg class="crm-block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+          O que acontece automaticamente
+        </div>
+        <ul class="crm-list">
+          <li>Quando o cadastro entra, o responsável recebe uma mensagem via WhatsApp nos primeiros minutos</li>
+          <li>Se não responder: acompanhamento automático em 24 horas, 3 dias e 7 dias</li>
+          <li>Quando a visita é agendada: confirmação automática + lembrete no dia anterior e no dia da visita</li>
+          <li>Quem visitou mas não matriculou: sequência de acompanhamento por WhatsApp ao longo de 30 dias</li>
+        </ul>
+      </div>
+
+      <div class="crm-block">
+        <div class="crm-block-title">
+          <svg class="crm-block-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          O que a escola vê
+        </div>
+        <ul class="crm-list">
+          <li>Painel em tempo real com todos os cadastros e em qual etapa cada um está</li>
+          <li>Quantas visitas foram agendadas e quantas foram realizadas</li>
+          <li>Taxa de conversão em cada etapa do pipeline</li>
+          <li>Histórico completo de cada contato: mensagens, ligações e interações</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= SEÇÃO 8 — MÉTRICAS ========================= -->
+<section id="s08" class="pad sec-light">
+  <div class="wrap">
+    <div class="sec-header anim">
+      <span class="sec-lbl">08 — Como Vamos Medir</span>
+      <h2 class="sec-title sec-title-light bar-accent">Três números que importam.</h2>
+    </div>
+
+    <div class="metrics-grid">
+      <div class="metric-card anim anim-d1">
+        <div class="metric-num">R$30</div>
+        <div class="metric-label">Custo por cadastro</div>
+        <p class="metric-desc">Quanto custou cada cadastro gerado. Com R$72.000 de investimento, a meta é gerar 2.000 cadastros qualificados ao longo de 6 meses.</p>
+        <div class="metric-meta">Acompanhamento semanal</div>
+      </div>
+      <div class="metric-card anim anim-d2">
+        <div class="metric-num" style="font-size:36px">Custo/<br>visita</div>
+        <div class="metric-label">Custo por visita agendada</div>
+        <p class="metric-desc">Mede a qualidade do cadastro e do atendimento juntos. Uma queda nesse número indica que o atendimento está convertendo mais eficientemente.</p>
+        <div class="metric-meta">Acompanhamento semanal</div>
+      </div>
+      <div class="metric-card anim anim-d3">
+        <div class="metric-num">R$360</div>
+        <div class="metric-label">Custo por matrícula</div>
+        <p class="metric-desc">O número final. Com 2.000 cadastros e 10% de conversão, chegamos a 200 matrículas. R$360 por aluno captado.</p>
+        <div class="metric-meta">Meta da campanha</div>
+      </div>
+    </div>
+
+    <div class="metrics-closing anim anim-d4">
+      <p>Com o retorno de <strong>3 anos de mensalidade</strong> por aluno, este é o investimento com <strong>maior retorno</strong> que a escola pode fazer em captação.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+<footer id="footer">
+  <div class="wrap">
+    <div class="footer-logos">
+      <img src="Logo Atrio 2.png" alt="Colégio Átrio" class="footer-atrio">
+      <div class="footer-divider"></div>
+      <img src="LOGO/Logo branca.png" alt="GRIT" class="footer-grit">
+    </div>
+    <div class="footer-title">Colégio Átrio × GRIT — Captação 2027</div>
+    <div class="footer-sub">Julho a Dezembro de 2026</div>
+    <div class="footer-line"></div>
+    <div class="footer-byline">GRIT — Gestão de Resultados Inteligente em Tráfego</div>
+  </div>
+</footer>
+
+<script>
+// Progress bar
+const prog = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  prog.style.width = Math.min(pct, 100) + '%';
+});
+
+// Fade-up animations
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('show'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.anim').forEach(el => observer.observe(el));
+
+// Bar fills animate on scroll
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.verba-bar-fill').forEach(bar => {
+        const pct = bar.getAttribute('data-pct');
+        setTimeout(() => { bar.style.width = pct + '%'; }, 300);
+      });
+      barObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+const verba = document.querySelector('#s02');
+if (verba) barObserver.observe(verba);
+
+// Fase accordion
+function toggleFase(header) {
+  const item = header.closest('.fase-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.fase-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
